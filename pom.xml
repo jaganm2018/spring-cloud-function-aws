@@ -58,32 +58,36 @@
     </dependencyManagement>
 
     <build>
-        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-maven-plugin</artifactId>
-                <configuration>
-                    <args>
-                        <arg>-Xjsr305=strict</arg>
-                    </args>
-                    <compilerPlugins>
-                        <plugin>spring</plugin>
-                    </compilerPlugins>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-shade-plugin</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</dependency>
+	</dependencies>
+	<configuration>
+		<createDependencyReducedPom>false</createDependencyReducedPom>
+		<shadedArtifactAttached>true</shadedArtifactAttached>
+		<shadedClassifierName>aws</shadedClassifierName>
+		<transformers>
+			<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+				<resource>META-INF/spring.handlers</resource>
+			</transformer>
+			<transformer implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer">
+				<resource>META-INF/spring.factories</resource>
+			</transformer>
+			<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+				<resource>META-INF/spring.schemas</resource>
+			</transformer>
+		</transformers>
+	</configuration>
+</plugin>
+
+
         </plugins>
     </build>
 
