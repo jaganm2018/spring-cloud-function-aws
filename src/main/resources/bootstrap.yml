@@ -1,9 +1,10 @@
 spring:
   profiles:
-    active: awss3
+    active: dev
   cloud:
     config:
-      server:
+      server: 
+        profile: awss3
         awss3:
           region: us-east-1
           bucket: sample-config
