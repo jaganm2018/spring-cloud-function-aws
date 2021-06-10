@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: awss3
+  cloud:
+    config:
+      server:
+        awss3:
+          region: us-east-1
+          bucket: sample-config
