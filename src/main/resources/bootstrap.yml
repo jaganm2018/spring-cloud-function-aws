@@ -8,3 +8,4 @@ spring:
         awss3:
           region: us-east-1
           bucket: sample-config
+        bootstrap: true
