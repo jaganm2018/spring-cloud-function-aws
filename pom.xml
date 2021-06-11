@@ -46,7 +46,7 @@
 	    <!-- config- server dependencies -->
 	<dependency>
             <groupId>com.amazonaws</groupId>
-            <artifactId>aws-jdk-sdk-s3</artifactId>
+            <artifactId>aws-java-sdk-s3</artifactId>
             <version>1.11.1019</version>
         </dependency>
 	
