@@ -3,8 +3,8 @@ spring:
     active: dev
   cloud:
     config:
+      profile: awss3
       server: 
-        profile: awss3
         awss3:
           region: us-east-1
           bucket: sample-config
