@@ -107,12 +107,6 @@
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-shade-plugin</artifactId>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-maven-plugin</artifactId>
-		</dependency>
-	</dependencies>
 	<configuration>
 		<createDependencyReducedPom>false</createDependencyReducedPom>
 		<shadedArtifactAttached>true</shadedArtifactAttached>
