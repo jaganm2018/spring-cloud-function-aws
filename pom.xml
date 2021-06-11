@@ -18,16 +18,16 @@
   
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-function-adapater-aws</artifactId>
+            <artifactId>spring-cloud-function-adapter-aws</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.amazonaws</groupId>
-            <artifactId>aws-lambda-Java-events</artifactId>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-events</artifactId>
             <version>3.1.0</version>
         </dependency>
 
           <dependency>
-            <groupId>org.amazonaws</groupId>
+            <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-Java-core</artifactId>
             <version>1.2.1</version>
         </dependency>
@@ -41,7 +41,6 @@
 	 <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
-           <--  <version>3.0.3</version> -->
         </dependency>
 
 	    <!-- config- server dependencies -->
