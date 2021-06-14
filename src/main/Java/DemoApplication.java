@@ -1,8 +1,8 @@
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.cloud.config.EnableConfigServer;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.boot.SpringApplication;
-import org.springframework.beans.factory.annotation.value;
+import org.springframework.beans.factory.annotation.Value;
 import java.util.function.Function;
 
 @SpringBootApplication
