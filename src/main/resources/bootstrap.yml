@@ -1,11 +1,23 @@
+#spring:
+#  profiles:
+#    active: dev
+#  cloud:
+#    config:
+#      profile: awss3
+#      server: 
+#        awss3:
+#          region: us-east-1
+#          bucket: sample-config
+#        bootstrap: true
+
 spring:
   profiles:
-    active: dev
+    active: dev,composite
   cloud:
     config:
-      profile: awss3
-      server: 
-        awss3:
+      server:
+        composite:
+        - type: aws
           region: us-east-1
           bucket: sample-config
         bootstrap: true
